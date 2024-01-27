@@ -10,7 +10,7 @@ pool: Default
 
 stages:
   - stage: A
-    displayName: "qa"
+    displayName: "A"
     jobs:
     - job: a
     
@@ -20,7 +20,7 @@ stages:
     - job: a
     
   - stage: C
-    displayName: "depends on A"
+    displayName: "C depends on A"
     dependsOn: A
     jobs:
     - job: c

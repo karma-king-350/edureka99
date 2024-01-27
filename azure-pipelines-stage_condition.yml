@@ -21,7 +21,7 @@ stages:
     
   - stage: C
     displayName: "depends on A"
-    condition: dependsOn A
+    dependsOn: A
     jobs:
     - job: c
     

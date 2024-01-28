@@ -11,6 +11,8 @@ pool: Default
 stages:
   - stage: Test
     displayName: Test
+    jobs:
+      - job: Test
 
   - stage: Deploy_US1
     displayName: US1

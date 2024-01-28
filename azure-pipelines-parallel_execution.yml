@@ -12,23 +12,23 @@ stages:
   - stage: Test
     displayName: Test
 
-  - stage: Deploy US1
+  - stage: Deploy_US1
     displayName: US1
     dependsOn: Test
     jobs:
       - job: A
 
-  - stage: Deploy US2
+  - stage: Deploy_US2
     displayName: US2
     dependsOn: Test
     jobs:
       - job: B
 
-  - stage: Deploy Europe
+  - stage: Deploy_Europe
     displayName: Deploy Europe
     dependsOn:
-      - Deploy US1
-      - Deploy US2
+      - Deploy_US1
+      - Deploy_US2
     jobs:
       - job: C
 

@@ -15,16 +15,22 @@ stages:
   - stage: Deploy US1
     displayName: US1
     dependsOn: Test
+    jobs:
+      - job: A
 
   - stage: Deploy US2
     displayName: US2
     dependsOn: Test
+    jobs:
+      - job: B
 
   - stage: Deploy Europe
     displayName: Deploy Europe
     dependsOn:
-      -Deploy US1
-      -Deploy US2
+      - Deploy US1
+      - Deploy US2
+    jobs:
+      - job: C
 
 
 

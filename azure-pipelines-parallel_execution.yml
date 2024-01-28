@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: Default
+
+stages:
+  - stage: Test
+    displayName: Test
+
+  - stage: Deploy US1
+    displayName: US1
+    dependsOn: Test
+
+  - stage: Deploy US2
+    displayName: US2
+    dependsOn: Test
+
+  - stage: Deploy Europe
+    displayName: Deploy Europe
+    dependsOn:
+      -Deploy US1
+      -Deploy US2
+
+
+

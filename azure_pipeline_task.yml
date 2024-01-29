@@ -12,6 +12,5 @@ stages:
          - task: PowerShell@1
            inputs:
              scriptType: 'inlineScript'
-             inlineScript: |
-               Write-Host "Hello Word"
-            failOnStandardError: false
+             inlineScript: 'Write-Host "Hello Word"'
+             failOnStandardError: false

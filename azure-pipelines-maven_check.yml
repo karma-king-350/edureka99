@@ -1,5 +1,5 @@
 trigger: none
-pool:
+pool: Default
 
 steps:
 - powershell: |

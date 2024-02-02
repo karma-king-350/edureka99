@@ -4,7 +4,7 @@ pool: Default
 steps:
 - powershell: |
     $env:JAVA_HOME = "C:\Program Files\Java\jdk-21"
-    $env:M2_HOME = "C:\Program Files\apache-maven-3.9.6\bin"
+    $env:M2_HOME = "C:\Program Files\apache-maven-3.9.6"
     $env:PATH = "$env:M2_HOME\bin;$env:JAVA_HOME\bin;$env:PATH"
 - script: |
     mvn -version

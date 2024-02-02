@@ -1,0 +1,9 @@
+trigger: none
+pool:
+  name: Default
+
+steps:
+- script: |
+    mvn -version
+  displayName: 'Check Maven Version'
+

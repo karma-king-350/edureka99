@@ -1,0 +1,31 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+- azure-pipelines-condition
+pool: Default
+
+stages:
+  - stage: A
+    displayName: A
+    jobs:
+      - job: A
+
+  - stage: B
+    displayName: B
+    condition: failed('A')
+    jobs:
+      - job: B
+
+  - stage: C
+    displayName: C
+    dependsOn:
+      - A
+      - B
+    condition: failed('A')
+    jobs:
+      - job: c
+    
